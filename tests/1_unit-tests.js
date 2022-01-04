@@ -16,7 +16,13 @@ suite('Unit Tests', function(){
 
     // test('Decimal input', function(done){
     //   done();
-    // })
+    // });
+    test('Invalid number', function(done){
+      let input = '3/2.7/4L';
+      assert.equal(convertHandler.getNum(input), 'invalid number');
+      done();
+    })
+
   });
 
   suite('Function convertHandler.getUnit(input)', function(){
@@ -30,6 +36,8 @@ suite('Unit Tests', function(){
     });
 
     test('Unknown unit input', function(done){
+      let input = '32g';
+      assert.equal(convertHandler.getUnit(input), 'invalid unit');
       done();
     })
   });
@@ -80,6 +88,20 @@ suite('Unit Tests', function(){
     test('KG to LBS', function(done){
       let input = [5, 'kg'];
       let expected = 11.0231;
+      assert.approximately(parseFloat(convertHandler.convert(input[0], input[1])), expected, 0.1);
+      done();
+    });
+
+    test('MI to KM', function(done){
+      let input = [5, 'mi'];
+      let expected = 8.04672;
+      assert.approximately(parseFloat(convertHandler.convert(input[0], input[1])), expected, 0.1);
+      done();
+    });
+
+    test('KM to MI', function(done){
+      let input = [5, 'km'];
+      let expected = 3.10686;
       assert.approximately(parseFloat(convertHandler.convert(input[0], input[1])), expected, 0.1);
       done();
     });

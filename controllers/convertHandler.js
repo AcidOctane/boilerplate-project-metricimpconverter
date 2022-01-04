@@ -4,12 +4,20 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let result;
     result = input.match(inputRegex)[0]
+    if(isNaN(result)){
+      return 'invalid number';
+    }
     return result;
   };
 
   this.getUnit = function(input) {
     let result;
     result = input.match(inputRegex)[1]
+
+    let validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    if (!validUnits.includes(result)){
+      return 'invalid unit';
+    }
     return result;
   };
 
@@ -59,9 +67,9 @@ function ConvertHandler() {
       result = (initNum / lbsToKg).toFixed(5);
     }
 
-    if(initUnit === 'km' || initUnit ==='KM'){
+    if(initUnit === 'mi' || initUnit ==='MI'){
       result = (initNum * miToKm).toFixed(5);
-    }else if(initUnit === 'mi' || initUnit === 'MI'){
+    }else if(initUnit === 'km' || initUnit === 'KM'){
       result = (initNum / miToKm).toFixed(5);
     }
 
