@@ -85,7 +85,7 @@ suite('Unit Tests', function(){
         "gallon(s)",
         "litre(s)",
         "mile(s)",
-        "kilometre(s)",
+        "kilometer(s)",
         "pound(s)",
         "kilogram(s)"
       ];

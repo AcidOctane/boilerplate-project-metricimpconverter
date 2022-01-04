@@ -88,7 +88,7 @@ function ConvertHandler() {
     }else if(unit === 'mi' || unit ==='MI'){
       result = 'mile(s)';
     }else if(unit === 'km' || unit === 'KM'){
-      result = 'kilometre(s)';
+      result = 'kilometer(s)';
     }
     return result;
   };
