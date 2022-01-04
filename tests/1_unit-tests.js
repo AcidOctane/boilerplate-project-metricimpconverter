@@ -21,7 +21,7 @@ suite('Unit Tests', function(){
 
   suite('Function convertHandler.getUnit(input)', function(){
 
-    test('For Each Valid Unit Inputs', fucntion(done){
+    test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele){
         assert.equal(convertHandler.getUnit(32 + ele), ele)
@@ -29,7 +29,7 @@ suite('Unit Tests', function(){
       done();
     });
 
-    test('Unknown unit input', fucntion(done){
+    test('Unknown unit input', function(done){
       //done();
     })
   });
@@ -38,7 +38,7 @@ suite('Unit Tests', function(){
 
     test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg'];
-      let expected = ['l','gal','km','mi','kg','lbs'];
+      let expected = ['L','gal','km','mi','kg','lbs'];
       input.forEach((ele, i) => {
           assert.equal(convertHandler.getReturnUnit(ele), expected(i));
       });
