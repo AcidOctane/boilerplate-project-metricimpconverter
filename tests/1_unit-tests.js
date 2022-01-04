@@ -82,12 +82,12 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg'];
       let expect = [
-        "gallon(s)",
-        "litre(s)",
-        "mile(s)",
-        "kilometer(s)",
-        "pound(s)",
-        "kilogram(s)"
+        "gallons",
+        "litres",
+        "miles",
+        "kilometers",
+        "pounds",
+        "kilograms"
       ];
       input.forEach((item, i) => {
         assert.equal(convertHandler.spellOutUnit(item), expect[i]);

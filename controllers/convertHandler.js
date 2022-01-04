@@ -78,17 +78,17 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     let result;
     if(unit === 'gal' || unit ==='GAL'){
-      result = 'gallon(s)';
+      result = 'gallons';
     }else if(unit === 'l' || unit === 'L'){
-      result = 'liter(s)';
+      result = 'liters';
     }else if(unit === 'lbs' || unit ==='LBS'){
-      result = 'pound(s)';
+      result = 'pounds';
     }else if(unit === 'kg' || unit === 'KG'){
-      result = 'kilogram(s)';
+      result = 'kilograms';
     }else if(unit === 'mi' || unit ==='MI'){
-      result = 'mile(s)';
+      result = 'miles';
     }else if(unit === 'km' || unit === 'KM'){
-      result = 'kilometer(s)';
+      result = 'kilometers';
     }
     return result;
   };
