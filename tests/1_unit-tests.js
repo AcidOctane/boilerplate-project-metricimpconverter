@@ -49,9 +49,9 @@ suite('Unit Tests', function(){
 //  suite('Function convertHandler.getUnit(input)', function(){
 
     test('For Each Valid Unit Inputs', function(done){
-      let input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+      let input = ['gal','mi','km','lbs','kg','GAL', 'MI','KM','LBS','KG'];
       input.forEach(function(ele){
-        assert.equal(convertHandler.getUnit(32 + ele), ele)
+        assert.equal(convertHandler.getUnit(32 + ele), ele.toLowerCase())
       });
       done();
     });

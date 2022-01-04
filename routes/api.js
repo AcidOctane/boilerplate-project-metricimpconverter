@@ -28,14 +28,14 @@ module.exports = function (app) {
       res.json('invalid number');
     };
 
-    let responseObject = {}
-    responseObject['initNum'] = initNum
-    responseObject['initUnit'] = initUnit
-    responseObject['returnNum'] = returnNum
-    responseObject['returnUnit'] = returnUnit
-    responseObject['string'] = string
+    let responseObject = {};
+    responseObject['initNum'] = initNum;
+    responseObject['initUnit'] = initUnit;
+    responseObject['returnNum'] = returnNum;
+    responseObject['returnUnit'] = returnUnit;
+    responseObject['string'] = string;
 
-    res.json(responseObject)
+    res.json(responseObject);
   });
 
 };
