@@ -2,17 +2,49 @@ let inputRegex = /[a-z]+|[^a-z]+/gi
 function ConvertHandler() {
 
   this.getNum = function(input) {
+
     let result;
-    result = input.match(inputRegex)[0]
+
+    result = input.match(inputRegex)[0];
+
+    //check if only unit provided
+    let numberRegex = /\d/;
+
+    if(numberRegex.test(result) === false){
+      result = 1;
+    }
+
+    //check if number is a fraction
+    if(result.toString().includes('/')){
+
+      let values = result.toString().split('/');
+
+      if(values.length != 2){
+
+        return 'invalid number';
+
+      }
+
+      values[0] = parseFloat(values[0]);
+      values[1] = parseFloat(values[1]);
+      result = parseFloat((values[0]/values[1]).toFixed(5));
+    };
+
+    //check if number
     if(isNaN(result)){
       return 'invalid number';
     }
+
     return result;
   };
 
   this.getUnit = function(input) {
     let result;
-    result = input.match(inputRegex)[1]
+    result = input.match(inputRegex)[1];
+
+    if(!result){
+      result = input.match(inputRegex)[0];
+    }
 
     let validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     if (!validUnits.includes(result)){
@@ -46,17 +78,17 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     let result;
     if(unit === 'gal' || unit ==='GAL'){
-      result = 'gallons';
+      result = 'gallon(s)';
     }else if(unit === 'l' || unit === 'L'){
-      result = 'liters';
+      result = 'liter(s)';
     }else if(unit === 'lbs' || unit ==='LBS'){
-      result = 'pounds';
+      result = 'pound(s)';
     }else if(unit === 'kg' || unit === 'KG'){
-      result = 'kilogramms';
+      result = 'kilogram(s)';
     }else if(unit === 'mi' || unit ==='MI'){
-      result = 'miles';
+      result = 'mile(s)';
     }else if(unit === 'km' || unit === 'KM'){
-      result = 'kilometers';
+      result = 'kilometre(s)';
     }
     return result;
   };
@@ -86,7 +118,7 @@ function ConvertHandler() {
     }
 
 
-    return result;
+    return parseFloat(result);
   };
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
