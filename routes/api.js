@@ -16,12 +16,16 @@ module.exports = function (app) {
     var returnUnit = convertHandler.getReturnUnit(initUnit);
     var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
+    if(initNum === 'invalid number' && initUnit === 'invalid unit'){
+      res.json('invalid number and unit');
+    };
+
     if(initUnit === 'invalid unit'){
-      res.json();
+      res.json('invalid unit');
     };
 
     if(initNum === 'invalid number'){
-      res.json();
+      res.json('invalid number');
     };
 
     let responseObject = {}

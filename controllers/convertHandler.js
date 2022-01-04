@@ -45,7 +45,19 @@ function ConvertHandler() {
 
   this.spellOutUnit = function(unit) {
     let result;
-
+    if(unit === 'gal' || unit ==='GAL'){
+      result = 'gallons';
+    }else if(unit === 'l' || unit === 'L'){
+      result = 'liters';
+    }else if(unit === 'lbs' || unit ==='LBS'){
+      result = 'pounds';
+    }else if(unit === 'kg' || unit === 'KG'){
+      result = 'kilogramms';
+    }else if(unit === 'mi' || unit ==='MI'){
+      result = 'miles';
+    }else if(unit === 'km' || unit === 'KM'){
+      result = 'kilometers';
+    }
     return result;
   };
 
@@ -79,7 +91,7 @@ function ConvertHandler() {
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
-
+    result = initNum + " " + this.spellOutUnit(initUnit) + " converts to " + returnNum + " " + this.spellOutUnit(returnUnit);
     return result;
   };
 
