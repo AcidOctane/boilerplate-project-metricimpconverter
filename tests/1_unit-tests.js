@@ -6,7 +6,7 @@ let convertHandler = new ConvertHandler();
 
 suite('Unit Tests', function(){
 
-  suite('Function convertHandler.getNum(input)', function(){
+  //suite('Function convertHandler.getNum(input)', function(){
 
     test('Whole number input', function(done){
       let input = '32L';
@@ -44,9 +44,9 @@ suite('Unit Tests', function(){
       done();
     })
 
-  });
+  //});
 
-  suite('Function convertHandler.getUnit(input)', function(){
+//  suite('Function convertHandler.getUnit(input)', function(){
 
     test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
@@ -62,9 +62,9 @@ suite('Unit Tests', function(){
       done();
     })
 
-  });
+//  });
 
-  suite('Function convertHandler.getReturnUnit(initUnit)', function(){
+//  suite('Function convertHandler.getReturnUnit(initUnit)', function(){
 
     test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg'];
@@ -75,9 +75,9 @@ suite('Unit Tests', function(){
 
       done();
     });
-  });
+//  });
 
-  suite('Function convertHandler.spellOutUnit(unit)', function(){
+//  suite('Function convertHandler.spellOutUnit(unit)', function(){
 
     test('For Each Valid Unit Inputs', function(done){
       let input = ['gal','l','mi','km','lbs','kg'];
@@ -94,10 +94,10 @@ suite('Unit Tests', function(){
       done();
       });
     });
-  });
+//  });
 
 
-  suite('Function convertHandler.convert(num, unit)', function(){
+//  suite('Function convertHandler.convert(num, unit)', function(){
 
     test('Gal to L', function(done){
       let input = [5, 'gal'];
@@ -140,5 +140,5 @@ suite('Unit Tests', function(){
       assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
       done();
     });
-  });
+  //});
 });
