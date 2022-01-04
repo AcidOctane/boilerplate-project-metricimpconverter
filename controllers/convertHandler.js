@@ -50,8 +50,10 @@ function ConvertHandler() {
     if (!validUnits.includes(result)){
       return 'invalid unit';
     }
-    if (result === 'l'){
+    if (result === 'l'|| result === 'L'){
       result = 'L';
+    } else {
+      result = result.toLowerCase();
     }
     return result;
   };
